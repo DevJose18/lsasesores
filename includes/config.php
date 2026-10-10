@@ -2,16 +2,13 @@
 declare(strict_types=1);
 
 /**
- * Configuración de la aplicación.
+ * Configuración de la aplicación LS ASESORES.
  *
- * Las credenciales se leen de variables de entorno, de modo que el mismo
- * código funciona tanto en Docker (docker-compose) como en XAMPP.
- *
- * Si existe un archivo .env en la raíz del proyecto (copia de .env.example),
- * sus valores se cargan y se usan como variables de entorno.
+ * Entorno configurado con Base de Datos Ficticia (Mock Database).
+ * No requiere conexiones a servidores MySQL/MariaDB reales.
  */
 
-// Carga simple de .env, sin dependencias externas.
+// Carga opcional de .env, sin dependencias externas.
 $envFile = dirname(__DIR__) . '/.env';
 if (is_readable($envFile)) {
     foreach (file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES) as $line) {
@@ -39,13 +36,10 @@ function env(string $key, string $default = ''): string
 }
 
 return [
+    'app_name' => 'LS ASESORES',
+    'env'      => env('APP_ENV', 'development'),
     'db' => [
-        // Valores por defecto compatibles con XAMPP (localhost / root / sin password).
-        'host'    => env('DB_HOST', 'localhost'),
-        'port'    => env('DB_PORT', '3306'),
-        'name'    => env('DB_NAME', 'lsasesores'),
-        'user'    => env('DB_USER', 'root'),
-        'pass'    => env('DB_PASS', ''),
-        'charset' => 'utf8mb4',
+        'driver'  => 'mock',
+        'storage' => dirname(__DIR__) . '/database/mock_database.json',
     ],
 ];

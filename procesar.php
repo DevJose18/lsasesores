@@ -4,8 +4,8 @@ declare(strict_types=1);
 /**
  * Endpoint del formulario de contacto.
  *
- * Recibe los datos (FormData o JSON), los revalida en el servidor, guarda el
- * lead en la base de datos con una sentencia preparada y responde en JSON.
+ * Recibe los datos (FormData o JSON), los revalida en el servidor,
+ * guarda el lead en el entorno de base de datos ficticia y responde en JSON.
  */
 
 require __DIR__ . '/includes/db.php';
@@ -56,20 +56,16 @@ $datos = $resultado['datos'];
 $ip = $_SERVER['REMOTE_ADDR'] ?? null;
 
 try {
-    $sql = 'INSERT INTO leads (nombre, email, telefono, servicio, mensaje, ip)
-            VALUES (:nombre, :email, :telefono, :servicio, :mensaje, :ip)';
-
-    $sentencia = db()->prepare($sql);
-    $sentencia->execute([
-        ':nombre'   => $datos['nombre'],
-        ':email'    => $datos['email'],
-        ':telefono' => $datos['telefono'],
-        ':servicio' => $datos['servicio'],
-        ':mensaje'  => $datos['mensaje'],
-        ':ip'       => $ip,
+    $nuevoId = db()->insert('leads', [
+        'nombre'   => $datos['nombre'],
+        'email'    => $datos['email'],
+        'telefono' => $datos['telefono'],
+        'servicio' => $datos['servicio'],
+        'mensaje'  => $datos['mensaje'],
+        'ip'       => $ip,
     ]);
 } catch (Throwable $e) {
-    error_log('Error al guardar el lead: ' . $e->getMessage());
+    error_log('Error al guardar el lead en la base de datos ficticia: ' . $e->getMessage());
 
     responder(500, [
         'ok'      => false,
@@ -80,4 +76,5 @@ try {
 responder(201, [
     'ok'      => true,
     'mensaje' => '¡Gracias por contactarnos! Hemos recibido tu solicitud y un asesor de LS ASESORES te contactará muy pronto.',
+    'id'      => $nuevoId ?? null,
 ]);

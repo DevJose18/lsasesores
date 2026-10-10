@@ -1,33 +1,25 @@
-# Entorno de desarrollo LS ASESORES
-# Levanta web (PHP+Apache), base de datos (MariaDB) y Adminer.
+# Entorno Docker para LS ASESORES
+# Levanta la aplicación web (PHP + Apache) con base de datos ficticia (Mock DB).
+# También conserva los servicios auxiliares de MariaDB y Adminer.
 #
 #   docker compose up -d --build
 #
 #   Landing : http://localhost:8080
-#   Adminer : http://localhost:8081
-#   MariaDB : localhost:3307
-#
-# Los puertos 8080/8081/3307 se eligieron para NO chocar con XAMPP
-# (que usa 80 / 3306) si ambos se ejecutan a la vez.
+#   Adminer : http://localhost:8081 (opcional)
+#   MariaDB : localhost:3307 (opcional)
 
 services:
   web:
     build:
       context: .
     container_name: lsasesores_web
-    depends_on:
-      db:
-        condition: service_healthy
     ports:
       - "8080:80"
     volumes:
       - ./:/var/www/html
     environment:
-      DB_HOST: db
-      DB_PORT: 3306
-      DB_NAME: lsasesores
-      DB_USER: lsasesores
-      DB_PASS: lsasesores
+      APP_ENV: development
+      DB_DRIVER: mock
     restart: unless-stopped
 
   db:
@@ -41,7 +33,6 @@ services:
       MARIADB_USER: lsasesores
       MARIADB_PASSWORD: lsasesores
     volumes:
-      # El esquema se importa automáticamente la primera vez que se crea el volumen.
       - ./database/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
       - db_data:/var/lib/mysql
     healthcheck:

@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "name": "lsasesores_mock_db",
+    "version": "1.0",
+    "description": "Base de datos ficticia para LS ASESORES",
+    "updated_at": "2026-10-09T19:20:00Z"
+  },
+  "leads": [
+    {
+      "id": 1,
+      "nombre": "Carlos Mendoza",
+      "email": "carlos.mendoza@empresa.com",
+      "telefono": "+52 55 1234 5678",
+      "servicio": "contabilidad",
+      "mensaje": "Interesado en asesoría mensual para una PyME de servicios.",
+      "ip": "127.0.0.1",
+      "fecha_creacion": "2026-10-08 10:30:00"
+    },
+    {
+      "id": 2,
+      "nombre": "Laura Gómez",
+      "email": "lgomez@consultoria.mx",
+      "telefono": "+52 55 9876 5432",
+      "servicio": "impuestos",
+      "mensaje": "Requiero apoyo con la declaración anual y regularización fiscal.",
+      "ip": "127.0.0.1",
+      "fecha_creacion": "2026-10-08 14:15:00"
+    },
+    {
+      "id": 3,
+      "nombre": "Roberto Sánchez",
+      "email": "rsanchez@techsolutions.com",
+      "telefono": "+52 55 4567 8901",
+      "servicio": "asesoria",
+      "mensaje": "Planeación financiera estratégica para nuevo ejercicio fiscal.",
+      "ip": "127.0.0.1",
+      "fecha_creacion": "2026-10-09 09:00:00"
+    }
+  ]
+}
