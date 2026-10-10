@@ -5,7 +5,7 @@
  * 2) Validación del formulario en el cliente.
  * 3) Envío asíncrono (fetch) y mensaje de confirmación (reward message).
  *
- * Las reglas replican las del servidor (includes/validaciones.php), que es
+ * Las reglas replican las del servidor (app/utilities/validaciones.php), que es
  * quien tiene la última palabra.
  */
 (function () {

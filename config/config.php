@@ -2,13 +2,17 @@
 declare(strict_types=1);
 
 /**
- * Configuración de la aplicación LS ASESORES.
+ * LS ASESORES - Configuración del Sistema
  *
- * Entorno configurado con Base de Datos Ficticia (Mock Database).
- * No requiere conexiones a servidores MySQL/MariaDB reales.
+ * Gestión de configuración basada en la estructura del entorno de clase.
+ * Define constantes del entorno y configuración de base de datos ficticia (Mock DB).
  */
 
-// Carga opcional de .env, sin dependencias externas.
+if (!defined('DEV_ENV')) {
+    define('DEV_ENV', true);
+}
+
+// Carga opcional de variables de entorno desde .env si existe
 $envFile = dirname(__DIR__) . '/.env';
 if (is_readable($envFile)) {
     foreach (file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES) as $line) {
@@ -35,11 +39,25 @@ function env(string $key, string $default = ''): string
     return ($value === false || $value === '') ? $default : $value;
 }
 
+// Rutas base de la aplicación
+if (!defined('ROOT_DIR')) {
+    define('ROOT_DIR', dirname(__DIR__));
+}
+if (!defined('APPLICATION')) {
+    define('APPLICATION', ROOT_DIR . '/app');
+}
+if (!defined('SOURCE')) {
+    define('SOURCE', APPLICATION);
+}
+if (!defined('CONFIG_DIR')) {
+    define('CONFIG_DIR', __DIR__);
+}
+
 return [
     'app_name' => 'LS ASESORES',
     'env'      => env('APP_ENV', 'development'),
     'db' => [
         'driver'  => 'mock',
-        'storage' => dirname(__DIR__) . '/database/mock_database.json',
+        'storage' => ROOT_DIR . '/database/mock_database.json',
     ],
 ];

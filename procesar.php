@@ -8,8 +8,10 @@ declare(strict_types=1);
  * guarda el lead en el entorno de base de datos ficticia y responde en JSON.
  */
 
-require __DIR__ . '/includes/db.php';
-require __DIR__ . '/includes/validaciones.php';
+require_once __DIR__ . '/config/config.php';
+require_once __DIR__ . '/config/autoload.php';
+require_once __DIR__ . '/app/libs/db/db.php';
+require_once __DIR__ . '/app/utilities/validaciones.php';
 
 header('Content-Type: application/json; charset=utf-8');
 

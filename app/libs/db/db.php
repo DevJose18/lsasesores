@@ -2,11 +2,11 @@
 declare(strict_types=1);
 
 /**
- * Entorno de Base de Datos Ficticia (Mock Database) para LS ASESORES.
+ * LS ASESORES - Capa de Base de Datos (app/libs/db/db.php)
  *
- * Reemplaza completamente las conexiones reales a MySQL/MariaDB.
- * Almacena y simula operaciones de base de datos en memoria y/o en
- * archivo JSON (database/mock_database.json).
+ * Ubicado en app/libs/db/ según la gestión de archivos de la clase.
+ * Provee la implementación de MockDatabase (entorno de base de datos ficticia)
+ * que reemplaza cualquier conexión real a motores de bases de datos externos.
  */
 
 class MockStatement
@@ -84,13 +84,16 @@ class MockDatabase
 
     public function __construct(?string $storagePath = null)
     {
-        $config = require __DIR__ . '/config.php';
-        $this->storagePath = $storagePath ?? ($config['db']['storage'] ?? dirname(__DIR__) . '/database/mock_database.json');
+        $configFile = dirname(__DIR__, 3) . '/config/config.php';
+        $config = is_readable($configFile) ? require $configFile : [];
+        $defaultStorage = dirname(__DIR__, 3) . '/database/mock_database.json';
+
+        $this->storagePath = $storagePath ?? ($config['db']['storage'] ?? $defaultStorage);
         $this->load();
     }
 
     /**
-     * Carga los datos existentes desde el almacenamiento ficticio.
+     * Carga los datos existentes desde el archivo JSON ficticio.
      */
     private function load(): void
     {

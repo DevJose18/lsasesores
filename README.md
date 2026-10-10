@@ -35,13 +35,18 @@ La landing page cumple con la estructura requerida para la conversión de client
 lsasesores/
 ├── index.php                 # Landing page (punto de entrada)
 ├── procesar.php              # Endpoint del formulario (validación + guardado en Mock DB)
-├── includes/
-│   ├── config.php            # Configuración de la aplicación
-│   ├── db.php                # Entorno de base de datos ficticia (MockDatabase)
-│   ├── validaciones.php      # Reglas de validación del servidor
-│   └── partials/
-│       ├── header.php        # Cabecera y navegación
-│       └── footer.php        # Pie de página
+├── config/
+│   ├── autoload.php          # Autocargador del sistema
+│   └── config.php            # Configuración general y constantes de entorno
+├── app/
+│   ├── libs/
+│   │   └── db/
+│   │       └── db.php        # Capa de base de datos ficticia (MockDatabase)
+│   ├── utilities/
+│   │   └── validaciones.php  # Utilidades de validación del servidor
+│   └── views/
+│       ├── header.php        # Vista de cabecera y navegación
+│       └── footer.php        # Vista de pie de página
 ├── assets/
 │   ├── css/estilos.css       # Estilos simplificados y responsive
 │   ├── js/validacion.js      # Validación cliente + envío AJAX

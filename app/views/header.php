@@ -19,7 +19,7 @@ $titulo = $titulo ?? 'LS ASESORES | Asesoría Contable y Fiscal';
     <header class="header" id="inicio">
         <div class="contenedor header__inner">
             <a class="marca" href="#inicio" aria-label="LS ASESORES, ir al inicio">
-                <img class="marca__logo" src="assets/img/logo.svg" alt="Logo de LS ASESORES" width="46" height="46">
+                <img class="marca__logo" src="assets/img/logo.svg" alt="Logo de LS ASESORES" width="42" height="42">
                 <span class="marca__texto">LS <strong>ASESORES</strong></span>
             </a>
 

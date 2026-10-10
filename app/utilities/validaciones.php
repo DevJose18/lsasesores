@@ -2,10 +2,10 @@
 declare(strict_types=1);
 
 /**
- * Reglas de validación y sanitización de leads del lado del servidor.
+ * LS ASESORES - Utilidades de Validación
  *
- * El formulario (JS) aplica las mismas reglas en el cliente; aquí se
- * revalidan porque la validación del cliente nunca es confiable.
+ * Ubicado en app/utilities/ conforme a la gestión de archivos del proyecto.
+ * Reglas de validación y sanitización de leads en el lado del servidor.
  */
 
 const SERVICIOS_PERMITIDOS = [

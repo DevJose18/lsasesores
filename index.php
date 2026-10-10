@@ -1,11 +1,13 @@
 <?php
 declare(strict_types=1);
 
-require __DIR__ . '/includes/validaciones.php';
+require_once __DIR__ . '/config/config.php';
+require_once __DIR__ . '/config/autoload.php';
+require_once __DIR__ . '/app/utilities/validaciones.php';
 
 $titulo = 'LS ASESORES | Asesoría Contable y Fiscal';
 
-require __DIR__ . '/includes/partials/header.php';
+require_once __DIR__ . '/app/views/header.php';
 ?>
 
         <section class="hero">
@@ -201,4 +203,4 @@ require __DIR__ . '/includes/partials/header.php';
             </div>
         </section>
 
-<?php require __DIR__ . '/includes/partials/footer.php'; ?>
+<?php require_once __DIR__ . '/app/views/footer.php'; ?>
