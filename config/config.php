@@ -1,63 +1,69 @@
 <?php
 declare(strict_types=1);
 
-/**
- * LS ASESORES - Configuración del Sistema
- *
- * Gestión de configuración basada en la estructura del entorno de clase.
- * Define constantes del entorno y configuración de base de datos ficticia (Mock DB).
- */
-
-if (!defined('DEV_ENV')) {
-    define('DEV_ENV', true);
+// Iniciar sesión para soportar tokens CSRF y mensajes flash
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
 }
 
-// Carga opcional de variables de entorno desde .env si existe
-$envFile = dirname(__DIR__) . '/.env';
-if (is_readable($envFile)) {
-    foreach (file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES) as $line) {
-        $line = trim($line);
-        if ($line === '' || str_starts_with($line, '#') || !str_contains($line, '=')) {
-            continue;
-        }
-        [$key, $value] = explode('=', $line, 2);
-        $key = trim($key);
-        $value = trim($value, " \t\n\r\0\x0B\"'");
-        if ($key !== '' && getenv($key) === false) {
-            putenv("$key=$value");
+// Credenciales de la Base de Datos MySQL
+define('DB_HOST', 'localhost');          // Servidor de base de datos
+define('DB_NAME', 'lsasesores_db');       // Nombre de la base de datos
+define('DB_USER', 'root');                // Usuario de MySQL
+define('DB_PASS', '');                    // Contraseña de MySQL
+define('DB_PORT', '3306');                // Puerto MySQL
+define('DB_CHARSET', 'utf8mb4');          // Codificación recomendada
+
+/**
+ * Retorna una instancia PDO configurada de forma segura
+ *
+ * @return PDO
+ */
+function getDBConnection(): PDO {
+    static $pdo = null;
+
+    if ($pdo === null) {
+        $dsn = "mysql:host=" . DB_HOST . ";port=" . DB_PORT . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET;
+        
+        $options = [
+            PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+            PDO::ATTR_EMULATE_PREPARES   => false,
+            PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES " . DB_CHARSET
+        ];
+
+        try {
+            $pdo = new PDO($dsn, DB_USER, DB_PASS, $options);
+        } catch (PDOException $e) {
+            error_log("Error de conexión a la Base de Datos: " . $e->getMessage());
+            throw new PDOException("No se pudo conectar a la base de datos. Por favor verifica config/config.php.");
         }
     }
+
+    return $pdo;
 }
 
 /**
- * Devuelve una variable de entorno con un valor por defecto.
+ * Genera un token CSRF seguro en la sesión
+ *
+ * @return string
  */
-function env(string $key, string $default = ''): string
-{
-    $value = getenv($key);
-
-    return ($value === false || $value === '') ? $default : $value;
+function generateCsrfToken(): string {
+    if (empty($_SESSION['csrf_token'])) {
+        $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+    }
+    return $_SESSION['csrf_token'];
 }
 
-// Rutas base de la aplicación
-if (!defined('ROOT_DIR')) {
-    define('ROOT_DIR', dirname(__DIR__));
+/**
+ * Valida el token CSRF recibido
+ *
+ * @param string|null $token
+ * @return bool
+ */
+function validateCsrfToken(?string $token): bool {
+    if (empty($_SESSION['csrf_token']) || empty($token)) {
+        return false;
+    }
+    return hash_equals($_SESSION['csrf_token'], $token);
 }
-if (!defined('APPLICATION')) {
-    define('APPLICATION', ROOT_DIR . '/app');
-}
-if (!defined('SOURCE')) {
-    define('SOURCE', APPLICATION);
-}
-if (!defined('CONFIG_DIR')) {
-    define('CONFIG_DIR', __DIR__);
-}
-
-return [
-    'app_name' => 'LS ASESORES',
-    'env'      => env('APP_ENV', 'development'),
-    'db' => [
-        'driver'  => 'mock',
-        'storage' => ROOT_DIR . '/database/mock_database.json',
-    ],
-];

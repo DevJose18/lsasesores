@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- SEO Meta Tags -->
+  <title>LS Asesores | Asesoría Fiscal, Financiera y Legal Estratégica</title>
+  <meta name="description" content="Servicios profesionales de consultoría fiscal, auditoría y estrategia corporativa. Impulsamos la rentabilidad y seguridad de tu empresa.">
+  <meta name="author" content="LS Asesores">
+
+  <!-- Favicon SVG Embebido -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f172a'/%3E%3Ctext x='50' y='65' font-family='sans-serif' font-weight='900' font-size='48' fill='%23ffd72d' text-anchor='middle'%3ELS%3C/text%3E%3C/svg%3E">
+
+  <!-- Tipografía Google Fonts (Plus Jakarta Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Framework Bootstrap 5.3.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Estilos Personalizados LS Asesores (Variables :root y Reglas de Marca) -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ======================================================================
+       1. HEADER (Contenedor con Logo Centrado)
+       ====================================================================== -->
+  <header class="site-header py-3 sticky-top shadow-sm">
+    <div class="container d-flex justify-content-center align-items-center">
+      <a href="index.html" class="d-flex align-items-center gap-2 text-decoration-none">
+        <div class="brand-logo-icon">LS</div>
+        <div class="d-flex flex-column">
+          <span class="fs-4 fw-bold lh-1 text-dark">LS <span style="color: var(--color-primary-dark);">ASESORES</span></span>
+          <span class="text-secondary fw-semibold text-uppercase" style="font-size: 0.65rem; letter-spacing: 0.15em;">Consultoría Estratégica</span>
+        </div>
+      </a>
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       2. HERO SECTION (Imagen de Fondo, H1, Descripción y CTA)
+       ====================================================================== -->
+  <section class="hero-section text-center" id="hero">
+    <div class="container py-5" style="max-width: 900px;">
+      <div class="mb-3">
+        <span class="badge rounded-pill px-3 py-2 fw-semibold" style="background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.2); color: var(--color-primary);">
+          ● Solidez, Ética y Seguridad Patrimonial
+        </span>
+      </div>
+
+      <h1 class="hero-title mb-4">
+        Asesoría Estratégica para Empresas que <span class="hero-highlight">Buscan Trascender</span>
+      </h1>
+
+      <p class="fs-5 text-light opacity-75 mb-4 mx-auto" style="max-width: 700px; line-height: 1.7;">
+        Optimizamos tu estructura fiscal, contable y corporativa con un modelo de consultoría preventivo, transparente y de máxima rentabilidad.
+      </p>
+
+      <div class="d-flex justify-content-center align-items-center gap-3 flex-wrap mb-5">
+        <a href="#contacto" class="btn btn-primary btn-lg px-4 py-3">
+          Solicitar Asesoría
+          <svg class="ms-1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+        <a href="#servicios" class="btn btn-outline-light btn-lg px-4 py-3">
+          Conocer Servicios
+        </a>
+      </div>
+
+      <!-- Métricas en Hero -->
+      <div class="row pt-4 border-top border-secondary border-opacity-25 text-center g-3">
+        <div class="col-4">
+          <div class="hero-stat-number">+15</div>
+          <div class="small text-light opacity-75 text-uppercase fw-semibold">Años de Éxito</div>
+        </div>
+        <div class="col-4">
+          <div class="hero-stat-number">+500</div>
+          <div class="small text-light opacity-75 text-uppercase fw-semibold">Empresas Asesoradas</div>
+        </div>
+        <div class="col-4">
+          <div class="hero-stat-number">99.4%</div>
+          <div class="small text-light opacity-75 text-uppercase fw-semibold">Fidelización</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       3. SECCIÓN DE LOGOS (Fila Centrada con 5 Logos en Escala de Grises)
+       ====================================================================== -->
+  <section class="logos-section py-5" id="logos">
+    <div class="container text-center">
+      <p class="text-uppercase text-secondary fw-bold small mb-4" style="letter-spacing: 0.12em;">
+        Compañías líderes que confían en nuestras soluciones
+      </p>
+      
+      <div class="d-flex justify-content-center align-items-center flex-wrap gap-4 gap-md-5">
+        <!-- Logo 1 -->
+        <div class="logo-item" title="Nexus Global Partners">
+          <svg viewBox="0 0 160 40" fill="currentColor">
+            <circle cx="20" cy="20" r="14" fill="none" stroke="currentColor" stroke-width="4"/>
+            <path d="M12 20h16M20 12v16" stroke="currentColor" stroke-width="3"/>
+            <text x="44" y="26" font-family="sans-serif" font-weight="800" font-size="16" letter-spacing="2">NEXUS</text>
+          </svg>
+        </div>
+
+        <!-- Logo 2 -->
+        <div class="logo-item" title="Apex Ventures">
+          <svg viewBox="0 0 150 40" fill="currentColor">
+            <polygon points="20,8 34,32 6,32" fill="none" stroke="currentColor" stroke-width="3"/>
+            <polygon points="20,16 28,30 12,30" fill="currentColor"/>
+            <text x="42" y="26" font-family="sans-serif" font-weight="800" font-size="16" letter-spacing="2">APEX</text>
+          </svg>
+        </div>
+
+        <!-- Logo 3 -->
+        <div class="logo-item" title="Horizon Capital">
+          <svg viewBox="0 0 170 40" fill="currentColor">
+            <path d="M8 28 C 16 10, 24 10, 32 28" fill="none" stroke="currentColor" stroke-width="4"/>
+            <circle cx="20" cy="18" r="4" fill="currentColor"/>
+            <text x="44" y="26" font-family="sans-serif" font-weight="800" font-size="15" letter-spacing="2">HORIZON</text>
+          </svg>
+        </div>
+
+        <!-- Logo 4 -->
+        <div class="logo-item" title="Synergy Corporate">
+          <svg viewBox="0 0 170 40" fill="currentColor">
+            <circle cx="15" cy="20" r="9" fill="none" stroke="currentColor" stroke-width="3"/>
+            <circle cx="27" cy="20" r="9" fill="none" stroke="currentColor" stroke-width="3"/>
+            <text x="46" y="26" font-family="sans-serif" font-weight="800" font-size="15" letter-spacing="2">SYNERGY</text>
+          </svg>
+        </div>
+
+        <!-- Logo 5 -->
+        <div class="logo-item" title="Vanguard Group">
+          <svg viewBox="0 0 180 40" fill="currentColor">
+            <path d="M10 10 L22 30 L34 10" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="46" y="26" font-family="sans-serif" font-weight="800" font-size="15" letter-spacing="2">VANGUARD</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       4. SECCIÓN DE SERVICIOS (Grid de Tarjetas con Imagen y Título)
+       ====================================================================== -->
+  <section class="py-5" id="servicios">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <span class="badge-custom mb-3">Nuestras Soluciones</span>
+        <h2 class="display-6 fw-bold text-dark mb-3">Servicios Diseñados para Proteger y Crecer</h2>
+        <p class="text-secondary mx-auto" style="max-width: 650px;">
+          Soluciones personalizadas y rigurosas adaptadas a la estructura fiscal, societaria y legal de cada empresa.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Servicio 1 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 service-card">
+            <div class="service-card-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=700&q=80" alt="Asesoría Fiscal" loading="lazy">
+              <span class="service-badge">Tributario</span>
+            </div>
+            <div class="card-body d-flex flex-column p-4">
+              <h3 class="h5 fw-bold text-dark mb-2">Asesoría Fiscal y Tributaria</h3>
+              <p class="text-secondary small flex-grow-1 mb-4">
+                Planificación preventiva de tributos, auditoría contable previa y defensa ante autoridades tributarias.
+              </p>
+              <a href="#contacto" class="fw-bold text-dark text-decoration-none mt-auto">
+                Solicitar información &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Servicio 2 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 service-card">
+            <div class="service-card-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=80" alt="Consultoría Financiera" loading="lazy">
+              <span class="service-badge">Finanzas</span>
+            </div>
+            <div class="card-body d-flex flex-column p-4">
+              <h3 class="h5 fw-bold text-dark mb-2">Consultoría Financiera & Contable</h3>
+              <p class="text-secondary small flex-grow-1 mb-4">
+                Control de flujo de caja, balance general analítico y métricas de rentabilidad para la toma de decisiones.
+              </p>
+              <a href="#contacto" class="fw-bold text-dark text-decoration-none mt-auto">
+                Solicitar información &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Servicio 3 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 service-card">
+            <div class="service-card-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=700&q=80" alt="Auditoría y Legal" loading="lazy">
+              <span class="service-badge">Legal</span>
+            </div>
+            <div class="card-body d-flex flex-column p-4">
+              <h3 class="h5 fw-bold text-dark mb-2">Auditoría & Cumplimiento Legal</h3>
+              <p class="text-secondary small flex-grow-1 mb-4">
+                Dictámenes de estados contables, análisis de riesgos normativos y blindaje contractual para tu tranquilidad.
+              </p>
+              <a href="#contacto" class="fw-bold text-dark text-decoration-none mt-auto">
+                Solicitar información &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Servicio 4 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 service-card">
+            <div class="service-card-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=700&q=80" alt="Gestión Laboral" loading="lazy">
+              <span class="service-badge">Laboral</span>
+            </div>
+            <div class="card-body d-flex flex-column p-4">
+              <h3 class="h5 fw-bold text-dark mb-2">Gestión Laboral & Nóminas</h3>
+              <p class="text-secondary small flex-grow-1 mb-4">
+                Administración integral de nóminas, contratos directivos y prevención de contingencias ante la legislación laboral.
+              </p>
+              <a href="#contacto" class="fw-bold text-dark text-decoration-none mt-auto">
+                Solicitar información &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Servicio 5 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 service-card">
+            <div class="service-card-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=700&q=80" alt="Estrategia Corporativa" loading="lazy">
+              <span class="service-badge">Estrategia</span>
+            </div>
+            <div class="card-body d-flex flex-column p-4">
+              <h3 class="h5 fw-bold text-dark mb-2">Estrategia Corporativa & M&A</h3>
+              <p class="text-secondary small flex-grow-1 mb-4">
+                Reestructuración societaria, fusiones, adquisiciones y modelos de gobernanza para la escalabilidad.
+              </p>
+              <a href="#contacto" class="fw-bold text-dark text-decoration-none mt-auto">
+                Solicitar información &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Servicio 6 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 service-card">
+            <div class="service-card-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=700&q=80" alt="Modernización Digital" loading="lazy">
+              <span class="service-badge">Innovación</span>
+            </div>
+            <div class="card-body d-flex flex-column p-4">
+              <h3 class="h5 fw-bold text-dark mb-2">Modernización & Procesos Digitales</h3>
+              <p class="text-secondary small flex-grow-1 mb-4">
+                Automatización de reportes, integración de ERPs y digitalización documental con estrictos protocolos de seguridad.
+              </p>
+              <a href="#contacto" class="fw-bold text-dark text-decoration-none mt-auto">
+                Solicitar información &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       5. SECCIÓN DE DOS COLUMNAS (Imagen a la Izquierda, Texto a la Derecha)
+       ====================================================================== -->
+  <section class="py-5 bg-white border-top border-bottom" id="nosotros">
+    <div class="container py-4">
+      <div class="row align-items-center g-5">
+        <!-- Columna Izquierda: Imagen -->
+        <div class="col-12 col-lg-6">
+          <div class="media-container pe-lg-3">
+            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1000&q=80" alt="Equipo de LS Asesores" loading="lazy">
+            <div class="floating-stat-card d-none d-sm-block">
+              <div class="fs-3 fw-bold text-dark lh-1">100%</div>
+              <div class="small text-secondary fw-semibold mt-1">Garantía de confidencialidad y rigor técnico en cada caso.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna Derecha: Texto -->
+        <div class="col-12 col-lg-6">
+          <span class="badge-custom mb-3">Experiencia Comprobada</span>
+          <h2 class="display-6 fw-bold text-dark mb-3">Claridad y Visión Estratégica en Cada Etapa</h2>
+          <p class="text-secondary mb-4" style="line-height: 1.7;">
+            En <strong>LS Asesores</strong> transformamos la complejidad de los marcos legales y fiscales en ventajas competitivas para tu negocio. Trabajamos con cercanía, proactividad y soluciones orientadas a resultados reales.
+          </p>
+
+          <div class="d-flex flex-column gap-3 mb-4">
+            <div class="d-flex align-items-start gap-3">
+              <div class="check-circle mt-1">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </div>
+              <div>
+                <strong class="text-dark d-block">Atención Directa y Personalizada</strong>
+                <span class="text-secondary small">Trato continuo y directo con socios directores especialistas en tu sector.</span>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-start gap-3">
+              <div class="check-circle mt-1">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </div>
+              <div>
+                <strong class="text-dark d-block">Enfoque Preventivo y Seguro</strong>
+                <span class="text-secondary small">Identificamos y mitigamos riesgos antes de que generen costes imprevistos.</span>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-start gap-3">
+              <div class="check-circle mt-1">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </div>
+              <div>
+                <strong class="text-dark d-block">Información Clara para Decisiones</strong>
+                <span class="text-secondary small">Presentamos diagnósticos concisos y recomendaciones prácticas sin tecnicismos innecesarios.</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="#contacto" class="btn btn-primary px-4 py-2">
+            Contactar con un Especialista
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       6. FORMULARIO DE CONTACTO (Campos: Nombre, Asunto, Mensaje + Email)
+       ====================================================================== -->
+  <section class="py-5" id="contacto">
+    <div class="container py-4" style="max-width: 820px;">
+      <div class="text-center mb-5">
+        <span class="badge-custom mb-3">Canal Directo</span>
+        <h2 class="display-6 fw-bold text-dark mb-3">Inicia la Conversación</h2>
+        <p class="text-secondary">
+          Envíanos tu consulta y un asesor especialista se comunicará contigo en menos de 24 horas laborables.
+        </p>
+      </div>
+
+      <!-- Tarjeta del Formulario -->
+      <div class="contact-card">
+        <form action="process.php" method="POST" id="contactForm">
+          <!-- Token CSRF para servidores estáticos de prueba -->
+          <input type="hidden" name="csrf_token" value="preview_token">
+
+          <!-- Campo Honeypot Oculto (Anti-Spam sin requerir JS) -->
+          <div class="d-none">
+            <label for="empresa_hp">No llenar este campo</label>
+            <input type="text" id="empresa_hp" name="empresa_hp" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="row g-3 mb-3">
+            <!-- Campo: Nombre -->
+            <div class="col-12 col-md-6">
+              <label for="nombre" class="form-label fw-bold text-dark small">
+                Nombre Completo <span class="text-danger">*</span>
+              </label>
+              <input 
+                type="text" 
+                id="nombre" 
+                name="nombre" 
+                class="form-control" 
+                placeholder="Ej. Juan Pérez" 
+                required 
+                minlength="3"
+                maxlength="100"
+                autocomplete="name"
+              >
+            </div>
+
+            <!-- Campo: Correo Electrónico -->
+            <div class="col-12 col-md-6">
+              <label for="email" class="form-label fw-bold text-dark small">
+                Correo Electrónico <span class="text-danger">*</span>
+              </label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                class="form-control" 
+                placeholder="contacto@empresa.com" 
+                required 
+                maxlength="120"
+                autocomplete="email"
+              >
+            </div>
+          </div>
+
+          <!-- Campo: Asunto -->
+          <div class="mb-3">
+            <label for="asunto" class="form-label fw-bold text-dark small">
+              Asunto <span class="text-danger">*</span>
+            </label>
+            <input 
+              type="text" 
+              id="asunto" 
+              name="asunto" 
+              class="form-control" 
+              placeholder="Ej. Asesoría en planificación fiscal corporativa" 
+              required 
+              minlength="3"
+              maxlength="150"
+            >
+          </div>
+
+          <!-- Campo: Mensaje -->
+          <div class="mb-4">
+            <label for="mensaje" class="form-label fw-bold text-dark small">
+              Mensaje o Consulta <span class="text-danger">*</span>
+            </label>
+            <textarea 
+              id="mensaje" 
+              name="mensaje" 
+              rows="5"
+              class="form-control" 
+              placeholder="Describe detalladamente los requerimientos de tu empresa..." 
+              required 
+              minlength="10"
+              maxlength="3000"
+            ></textarea>
+          </div>
+
+          <!-- Botón de Envío -->
+          <button type="submit" class="btn btn-primary w-100 py-3 fs-6">
+            Enviar Solicitud
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       7. FOOTER (Minimalista con Redes Sociales, Menú y Copyright)
+       ====================================================================== -->
+  <footer class="site-footer py-5">
+    <div class="container text-center">
+      <!-- Marca en Footer -->
+      <div class="d-inline-flex align-items-center gap-2 mb-4">
+        <div class="brand-logo-icon">LS</div>
+        <span class="fs-4 fw-bold text-white">LS <span style="color: var(--color-primary);">ASESORES</span></span>
+      </div>
+
+      <!-- Menú de Enlaces Rápidos -->
+      <nav aria-label="Navegación del pie de página" class="mb-4">
+        <ul class="list-inline mb-0">
+          <li class="list-inline-item mx-3"><a href="#hero" class="text-light text-opacity-75 text-decoration-none">Inicio</a></li>
+          <li class="list-inline-item mx-3"><a href="#servicios" class="text-light text-opacity-75 text-decoration-none">Servicios</a></li>
+          <li class="list-inline-item mx-3"><a href="#nosotros" class="text-light text-opacity-75 text-decoration-none">Nosotros</a></li>
+          <li class="list-inline-item mx-3"><a href="#contacto" class="text-light text-opacity-75 text-decoration-none">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <!-- Redes Sociales -->
+      <div class="d-flex justify-content-center align-items-center gap-2 mb-4">
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.45 1.45 0 1 0 0-2.9 1.45 1.45 0 0 0 0 2.9m1.39 9.74v-8.37H5.07v8.37h2.78z"/>
+          </svg>
+        </a>
+
+        <!-- X (Twitter) -->
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="X (Twitter)">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+        </a>
+
+        <!-- Facebook -->
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Copyright -->
+      <div class="small text-secondary pt-3 border-top border-secondary border-opacity-25">
+        &copy; 2026 <strong>LS Asesores</strong>. Todos los derechos reservados.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
